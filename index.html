@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weight in Funny Foods</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3801468523894298"
+     crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      background-color: #ffe6b3;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ff9933;
+      padding: 20px;
+      color: white;
+      font-size: 28px;
+    }
+    main {
+      margin: 30px auto;
+      max-width: 500px;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    input[type="number"], select {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin: 10px 0;
+      border: 2px solid #ffcc80;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e65c00;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #333;
+    }
+    footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    What's Your Weight in Funny Foods?
+  </header>
+  <main>
+    <!-- Ad Code -->
+    <div style="text-align: center; margin-bottom: 20px;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-3801468523894298"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
+    <label for="weight">Enter your weight in pounds:</label>
+    <input type="number" id="weight" placeholder="e.g., 150">
+    <label for="food">Choose a food:</label>
+    <select id="food">
+      <option value="1.6">Chicken Nuggets (1.6 oz each)</option>
+      <option value="4.3">Tacos (4.3 oz each)</option>
+      <option value="6.4">Burgers (6.4 oz each)</option>
+      <option value="0.2">French Fries (0.2 oz each)</option>
+      <option value="3.1">Slices of Pizza (3.1 oz each)</option>
+      <option value="5.0">Donuts (5.0 oz each)</option>
+      <option value="0.4">Gummy Bears (0.4 oz each)</option>
+      <option value="8.5">Watermelons (8.5 lb each)</option>
+      <option value="2.0">Cans of Soda (2.0 lb each)</option>
+      <option value="1.0">Popcorn Kernels (1.0 oz each)</option>
+      <option value="0.05">M&Ms (0.05 oz each)</option>
+      <option value="10.0">Cinder Blocks (10 lb each)</option>
+      <option value="0.25">Jelly Beans (0.25 oz each)</option>
+      <option value="1.2">Chocolate Bars (1.2 oz each)</option>
+      <option value="12.0">Large Pizzas (12 lb each)</option>
+      <option value="15.0">Bowling Balls (15 lb each)</option>
+      <option value="0.1">Sugar Cubes (0.1 oz each)</option>
+      <option value="0.8">Bananas (0.8 lb each)</option>
+      <option value="1.1">Eggs (1.1 oz each)</option>
+    </select>
+    <button onclick="calculateWeight()">Calculate</button>
+    <div class="result" id="result"></div>
+  </main>
+  <footer>
+    Made with 🍕, 🍔, and 🌮 for fun!
+  </footer>
+  <script>
+    function calculateWeight() {
+      const weight = parseFloat(document.getElementById('weight').value);
+      const foodWeight = parseFloat(document.getElementById('food').value);
+      const poundsToOunces = weight * 16; // convert pounds to ounces
+      const foodCount = Math.round(poundsToOunces / foodWeight);
+      const foodName = document.getElementById('food').options[document.getElementById('food').selectedIndex].text;
+      const resultDiv = document.getElementById('result');
+
+      if (!isNaN(weight) && weight > 0) {
+        resultDiv.innerHTML = `You weigh approximately <strong>${foodCount}</strong> ${foodName}!`;
+      } else {
+        resultDiv.innerHTML = `Please enter a valid weight.`;
+      }
+    }
+  </script>
+</body>
+</html>
